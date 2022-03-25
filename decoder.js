@@ -20,8 +20,6 @@ if (fs.existsSync('result.txt')) {
 
 rl.on('line', (line) => {
     const data = new Buffer(line, 'hex') + os.EOL
-    console.log()
     const options = { flag: 'a+' }
     fs.writeFileSync('result.txt', data.toString(), options, defaultHandler)
-    console.log(data)
 })
